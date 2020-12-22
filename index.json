@@ -18,22 +18,33 @@
         "package":"LQFP32",
         "peripheral": ["ADC","TIM","PWM"],
         "GPIO":28,
+        "IRQ":4,
         "price":2.8
     },
-    "GPIO": {
-        "num": [13,17],
-        "irq": 4
+    "UART": {
+        "num": 2,
+        "ISO7816": true,
+        "speed": 115200
     },
     "ADC": {
         "num": 1,
+        "type":"SAR",
         "channel": 18,
         "resolution": 12,
-        "rate": 1024
+        "rate": 512
     },
     "TIM": {
         "resolution":[16,32,16,16,16],
         "systick": 24,
         "IWDG": true
+    },
+    "OPA": {
+        "num": 2,
+        "rate": [5,10,15]
+    },
+    "CMP": {
+        "num": 5,
+        "rate": [5,10,15]
     },
     "PWM": {
         "num": 4,
@@ -55,8 +66,14 @@
         "Imax": 120
     },
     "EMC": {
-        "EFT": [2000,24000],
-        "ESD": [31]
+        "EFT": 2000,
+        "ESD": 4000
+    },
+    "upload": {
+        "ISP": true,
+        "IAP": true,
+        "SWD": true,
+        "speed": 115200
     },
     "manufacturer": {
         "vendor":"APT",
