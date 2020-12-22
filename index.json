@@ -1,8 +1,8 @@
 {
     "type":"MCU",
     "name":"APT32F172",
-    "tags": ["CK802"],
-    "series":["APT32F172K8T6"],
+    "tags": ["CK802","BLDC","motor"],
+    "series":["APT32F172K8","APT32F172G8","APT32F172H8"],
     "description":"APT 32bit C-Sky MCU",
     "peripheral": ["ADC","TIM","PWM"],
     "package":["LQFP32","QFN32","SOP28","SSOP24"],
@@ -12,17 +12,13 @@
         "architecture":"CK802",
         "Freq":20
     },
-    "APT32F172K8T6": {
-        "SRAM":128,
-        "Flash":2048,
+    "APT32F172K8": {
+        "SRAM":6000,
+        "Flash":64000,
+        "package":"LQFP32",
         "peripheral": ["ADC","TIM","PWM"],
         "GPIO":28,
         "price":2.8
-    },
-    "Level": {
-        "main":1,
-        "sub":12,
-        "price":0.7
     },
     "GPIO": {
         "num": [13,17],
@@ -30,12 +26,14 @@
     },
     "ADC": {
         "num": 1,
-        "channel": 6,
+        "channel": 18,
         "resolution": 12,
         "rate": 1024
     },
     "TIM": {
-        "resolution":[8,8,8,8,16]
+        "resolution":[16,32,16,16,16],
+        "systick": 24,
+        "IWDG": true
     },
     "PWM": {
         "num": 4,
